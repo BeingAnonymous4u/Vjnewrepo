@@ -208,15 +208,8 @@ Nᴀᴍᴇ - {}"""
 
 𝗠𝗲𝘀𝘀𝗮𝗴𝗲 <b>: {}</b>"""
 
-    CAPTION = """<b>📂Fɪʟᴇɴᴀᴍᴇ : {file_name} 
-📀 Sɪᴢᴇ - {file_size} </b>
-
-•────•──────────•────• 
-📌 Rᴇǫᴜᴇsᴛ Gʀᴏᴜᴘ : <a href="https://t.me/+kstxmybhcg44ZWE1">Cʟɪᴄᴋ Hᴇʀᴇ</a> 
-🎬 Mᴏᴠɪᴇs Cʜᴀɴɴᴇʟ : <a href="https://t.me/+bEarHRzuylxjMTk1">Cʟɪᴄᴋ Hᴇʀᴇ</a> 
-•────•──────────•────• 
- 
-©️ Pᴏᴡᴇʀᴇᴅ Bʏ : <a href="https://t.me/+Riemv1yReAAxN2I9">MᴏᴠɪᴇsWᴏʀʟᴅ</a>""" 
+    CAPTION = """<b>📂<u>Fɪʟᴇɴᴀᴍᴇ</u> :\n <a href="https://t.me/+bEarHRzuylxjMTk1">{file_name}</a>  
+📀 <pre><u>FɪʟᴇSize</u> : {file_size}</pre></b>""" 
 
     IMDB_TEMPLATE_TXT = """
 <b>Query: {qurey}
