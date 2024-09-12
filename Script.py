@@ -209,7 +209,7 @@ Nᴀᴍᴇ - {}"""
 𝗠𝗲𝘀𝘀𝗮𝗴𝗲 <b>: {}</b>"""
 
     CAPTION = """<b>📂<u>Fɪʟᴇɴᴀᴍᴇ</u> :\n<a href="https://t.me/+bEarHRzuylxjMTk1">{file_name}</a>  
-<pre>🏷 <u>FɪʟᴇSize</u> : {file_size}</pre></b>""" 
+<pre><blockquote><u>FɪʟᴇSize</u> : {file_size}</pre></blockquote></b>""" 
 
     IMDB_TEMPLATE_TXT = """
 <b>Query: {qurey}
