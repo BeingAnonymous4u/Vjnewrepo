@@ -215,7 +215,7 @@ Nᴀᴍᴇ - {}"""
 <b><b>🏷 ᴛɪᴛʟᴇ</b> - <a href={url}>{title}</a>
 🎭 ɢᴇɴʀᴇꜱ - {genres}
 📆 ʏᴇᴀʀ - <a href={url}/releaseinfo>{year}</a>
-🌟 ʀᴀᴛɪɴɢ - <a href={url}/ratings>{rating}</a> / 10 (based on {votes} user ratings.)
+🌟 ʀᴀᴛɪɴɢ - <a href={url}/ratings>{rating}</a> / 10 
 🔊 ʟᴀɴɢᴜᴀɢᴇ - <code>{languages}</code>
 📀 ʀᴜɴᴛɪᴍᴇ - {runtime} ᴍɪɴᴜᴛᴇꜱ
 
