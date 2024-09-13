@@ -208,27 +208,18 @@ Nᴀᴍᴇ - {}"""
 
 𝗠𝗲𝘀𝘀𝗮𝗴𝗲 <b>: {}</b>"""
 
-    CAPTION = """<b>📂<u>Fɪʟᴇɴᴀᴍᴇ</u> :\n<a href="https://t.me/+bEarHRzuylxjMTk1">{file_name}</a>  
-<pre><blockquote><u>FɪʟᴇSize</u> : {file_size}</pre></blockquote></b>""" 
+    CAPTION = """<b>📂<u>Fɪʟᴇɴᴀᴍᴇ</u> :<a href="https://t.me/+bEarHRzuylxjMTk1">{file_name}</a>  
+<u>FɪʟᴇSize</u> : {file_size}</b>""" 
 
     IMDB_TEMPLATE_TXT = """
-<b>Query: {qurey}
+<b><b>🏷 ᴛɪᴛʟᴇ</b> - <a href={url}>{title}</a>
+🎭 ɢᴇɴʀᴇꜱ - {genres}
+📆 ʏᴇᴀʀ - <a href={url}/releaseinfo>{year}</a>
+🌟 ʀᴀᴛɪɴɢ - <a href={url}/ratings>{rating}</a> / 10 (based on {votes} user ratings.)
+🔊 ʟᴀɴɢᴜᴀɢᴇ - <code>{languages}</code>
+📀 ʀᴜɴᴛɪᴍᴇ - {runtime} ᴍɪɴᴜᴛᴇꜱ
 
-IMDb Data:
-
-<b>🏷 Title</b>: <a href={url}>{title}</a>
-🎭 Genres: {genres}
-📆 Year: <a href={url}/releaseinfo>{year}</a>
-🌟 Rating: <a href={url}/ratings>{rating}</a> / 10 (based on {votes} user ratings.)
-☀️ Languages : <code>{languages}</code>
-📀 RunTime: {runtime} Minutes
-📆 Release Info : {release_date}
-🎛 Countries : <code>{countries}</code>
-
-
-⏰Result Shown in: {remaining_seconds} <i>seconds</i> 🔥
-
-Requested by : {message.from_user.mention}</b>"""
+📢 ʀᴇǫᴜᴇꜱᴛᴇᴅ ʙʏ - {message.from_user.mention}</b>"""
     
     ALL_FILTERS = """
 <b>Hᴇʏ {}, Tʜᴇsᴇ ᴀʀᴇ ᴍʏ ᴛʜʀᴇᴇ ᴛʏᴘᴇs ᴏғ ғɪʟᴛᴇʀs.</b>"""
