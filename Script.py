@@ -209,14 +209,18 @@ Nᴀᴍᴇ - {}"""
 𝗠𝗲𝘀𝘀𝗮𝗴𝗲 <b>: {}</b>"""
 
     CAPTION = """<b>📂<u>Fɪʟᴇɴᴀᴍᴇ</u> :<a href="https://t.me/+bEarHRzuylxjMTk1">{file_name}</a>  
-<u>FɪʟᴇSize</u> : {file_size}</b>""" 
+<pre>📀 Size : {file_size}</pre></b>""" 
 
     IMDB_TEMPLATE_TXT = """
-<b><b>🏷 ᴛɪᴛʟᴇ</b> - <a href={url}>{title}</a>
-🎭 ɢᴇɴʀᴇꜱ - {genres}
-📆 ʏᴇᴀʀ - <a href={url}/releaseinfo>{year}</a>
-🌟 ʀᴀᴛɪɴɢ - <a href={url}/ratings>{rating}</a> / 10 
-📀 ʀᴜɴᴛɪᴍᴇ - {runtime} ᴍɪɴᴜᴛᴇꜱ
+
+
+<b><pre>🔎  Result For: {qurey}</pre>
+
+🏷 ᴛɪᴛʟᴇ » <a href={url}>{title}</a>
+🎭 ɢᴇɴʀᴇꜱ » {genres}
+📆 ʏᴇᴀʀ » <a href={url}/releaseinfo>{year}</a>
+🌟 ʀᴀᴛɪɴɢ » <a href={url}/ratings>{rating}</a> / 10 
+📀 ʀᴜɴᴛɪᴍᴇ » {runtime} ᴍɪɴᴜᴛᴇꜱ
 
 📢 ʀᴇǫᴜᴇꜱᴛᴇᴅ ʙʏ - {message.from_user.mention}</b>"""
     
