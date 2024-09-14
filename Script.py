@@ -216,7 +216,6 @@ Nᴀᴍᴇ - {}"""
 🎭 ɢᴇɴʀᴇꜱ - {genres}
 📆 ʏᴇᴀʀ - <a href={url}/releaseinfo>{year}</a>
 🌟 ʀᴀᴛɪɴɢ - <a href={url}/ratings>{rating}</a> / 10 
-🔊 ʟᴀɴɢᴜᴀɢᴇ - <code>{languages}</code>
 📀 ʀᴜɴᴛɪᴍᴇ - {runtime} ᴍɪɴᴜᴛᴇꜱ
 
 📢 ʀᴇǫᴜᴇꜱᴛᴇᴅ ʙʏ - {message.from_user.mention}</b>"""
