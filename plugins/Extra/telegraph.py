@@ -1,73 +1,48 @@
-#By @Silicon_Bot_Update 
-#Distribute and edit it as your wish but please don't remove credit 😓😓
-#By stealing Credit of Developer you will not become pro so try to give full credit to Developer 🥺🥺🥺
+# Don't Remove Credit @VJ_Botz
+# Subscribe YouTube Channel For Amazing Bot @Tech_VJ
+# Ask Doubt on telegram @KingVJ01
+
 
 import os
-import requests
+import asyncio
 from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message, CallbackQuery
+from telegraph import upload_file
+from utils import get_file_id
 
-def upload_image_requests(image_path):
-    upload_url = "https://envs.sh"
-
-    try:
-        with open(image_path, 'rb') as file:
-            files = {'file': file} 
-            response = requests.post(upload_url, files=files)
-
-            if response.status_code == 200:
-                return response.text.strip() 
-            else:
-                raise Exception(f"Upload failed with status code {response.status_code}")
-
-    except Exception as e:
-        print(f"Error during upload: {e}")
-        return None
-
-#By @Silicon_Bot_Update 
-#Distribute and edit it as your wish but please don't remove credit 😓😓
-#By stealing Credit of Developer you will not become pro so try to give full credit to Developer 🥺🥺🥺
 
 @Client.on_message(filters.command("telegraph") & filters.private)
-async def upload_command(client, message):
-    replied = message.reply_to_message
-    if not replied:
-        await message.reply_text("Reply to a photo or video under 512 MB.")
+async def telegraph_upload(bot, update):
+    t_msg = await bot.ask(chat_id = update.from_user.id, text = "Now Send Me Your Photo Or Video Under 5MB To Get Telegraph Link.")
+  #  if not replied:
+  #      await update.reply_text("𝚁𝙴𝙿𝙻𝚈 𝚃𝙾 𝙰 𝙿𝙷𝙾𝚃𝙾 𝙾𝚁 𝚅𝙸𝙳𝙴𝙾 𝚄𝙽𝙳𝙴𝚁 𝟻𝙼𝙱.")
+ #       return
+    file_info = get_file_id(t_msg)
+    if not file_info:
+        await update.reply_text("Not supported!")
         return
-
-    if replied.media and hasattr(replied, 'file_size'):
-        if replied.file_size > 536870912:
-            await message.reply_text("File size is greater than 512 MB.")
-            return
-
-    silicon_path = await replied.download()
-
-    uploading_message = await message.reply_text("<code>Uploading...</code>")
-
+    text = await update.reply_text(text="<code>Downloading to My Server ...</code>", disable_web_page_preview=True)   
+    media = await t_msg.download()   
+    await text.edit_text(text="<code>Downloading Completed. Now I am Uploading to telegra.ph Link ...</code>", disable_web_page_preview=True)                                            
     try:
-        silicon_url = upload_image_requests(silicon_path)
-        if not silicon_url:
-            raise Exception("Failed to upload file.")
+        response = upload_file(media)
     except Exception as error:
-        await uploading_message.edit_text(f"Upload failed: {error}")
-        return
-
+        print(error)
+        await text.edit_text(text=f"Error :- {error}", disable_web_page_preview=True)       
+        return    
     try:
-        os.remove(silicon_path)
+        os.remove(media)
     except Exception as error:
-        print(f"Error removing file: {error}")
-
-    await uploading_message.edit_text(
-        text=f"<b>Link :-</b>\n\n<code>{silicon_url}</code>",
+        print(error)
+        return    
+    await text.edit_text(
+        text=f"<b>Link :-</b>\n\n<code>https://graph.org{response[0]}</code>",
         disable_web_page_preview=True,
-        reply_markup=InlineKeyboardMarkup([[
-            InlineKeyboardButton(text="Open Link", url=silicon_url),
-            InlineKeyboardButton(text="Share Link", url=f"https://telegram.me/share/url?url={silicon_url}")
-        ], [
-            InlineKeyboardButton(text="Close this menu", callback_data="close_data")
-        ]])
-    )
-
-#By @Silicon_Bot_Update 
-#Distribute and edit it as your wish but please don't remove credit 😓😓
-#By stealing Credit of Developer you will not become pro so try to give full credit to Developer 🥺🥺🥺
+        reply_markup=InlineKeyboardMarkup( [[
+            InlineKeyboardButton(text="Open Link", url=f"https://graph.org{response[0]}"),
+            InlineKeyboardButton(text="Share Link", url=f"https://telegram.me/share/url?url=https://graph.org{response[0]}")
+            ],[
+            InlineKeyboardButton(text="✗ Close ✗", callback_data="close")
+            ]])
+        )
+    
